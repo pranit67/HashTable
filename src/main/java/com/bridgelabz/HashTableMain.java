@@ -1,6 +1,7 @@
 package com.bridgelabz;
 
 public class HashTableMain {
+
     public static void main(String[] args) {
         System.out.println("Welcome To HashTable Program");
         MyHashTable<String, Integer> hashTable = new MyHashTable();
@@ -15,12 +16,18 @@ public class HashTableMain {
         for (String word : sentenceArray) {
             Integer value = hashTable.get(word);
 
-            if (value == null)
+            if( value == null) // //frequency of the word StayWith 1
                 value = 1;
             else
-                value = value + 1;
-            hashTable.add(word, value);
+                value = value + 1; //frequency of the word increases by 1
+            hashTable.add(word , value);
+            System.out.println("Value = "+value);
         }
+        System.out.println(hashTable);
+
+        //Remove "avoidable" from the hashtable
+        hashTable.remove("avoidable");
+
         System.out.println(hashTable);
     }
 }
